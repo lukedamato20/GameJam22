@@ -8,7 +8,6 @@ public class playerMovement : MonoBehaviour
     // user vars
     float moveSpeeda = 0.5f;
     public float moveSpeed = 5;
-    bool startOfGame = true;
     public Rigidbody2D rb;
     public Vector2 moveDirection;
     
@@ -43,18 +42,14 @@ public class playerMovement : MonoBehaviour
         // When target is hit
         if (col.gameObject.tag == "Enemy")
         {
-            Debug.Log("Collision detected");
-
-            //movePause = true;
-            //Invoke("collisionTime", 5);     
+            Debug.Log("Collision detected");  
 
             Destroy(col.gameObject);
         }
         if (col.gameObject.tag == "pill1")
         {
-            Debug.Log("Collision pill1");
-
             // pill 1 -- user speed * 2
+            Debug.Log("Collision pill1");
 
             Destroy(col.gameObject);
         }
@@ -106,15 +101,6 @@ public class playerMovement : MonoBehaviour
             PlayerPrefs.SetInt("level", level);
             Debug.Log("Level: " + level);
             
-            //  delete all keys (player prefs) after end of game
-
-            if (PlayerPrefs.GetInt("level") == 5)
-            {
-                PlayerPrefs.SetInt("level", 1);
-                
-                //end of game
-            }
-
             SceneManager.LoadScene("Hub");
         }
     }

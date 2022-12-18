@@ -16,6 +16,7 @@ public class EnemyAI : MonoBehaviour
 
     Seeker seeker;
     Rigidbody2D rb;
+
     // Start is called before the first frame update
     void Start()
     {

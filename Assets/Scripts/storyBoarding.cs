@@ -6,7 +6,6 @@ public class storyBoarding : MonoBehaviour
 {
     public Animator anim;
 
-    // Start is called before the first frame update
     void Start()
     {
         if (PlayerPrefs.HasKey("game"))
@@ -37,11 +36,5 @@ public class storyBoarding : MonoBehaviour
             PlayerPrefs.SetInt("game", 1);
             anim.SetInteger("level", 1);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

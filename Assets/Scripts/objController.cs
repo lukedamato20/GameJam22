@@ -9,7 +9,6 @@ public class objController : MonoBehaviour
     public int level = 1;
     public playerMovement playerMvmt;
 
-    // Start is called before the first frame update
     void Start()
     {
         if (PlayerPrefs.HasKey("level"))
@@ -21,13 +20,10 @@ public class objController : MonoBehaviour
             level = 0;
         }
 
-        //Debug.Log(playerMvmt.level);
         if (PlayerPrefs.GetInt("level") == 1)
         {
             objX = Random.Range(-7.5f, 7.5f);
             objY = Random.Range(-7.5f, 7.5f);
-
-            //obj.transform.position = new Vector2(objX, objY);
         }
         else if (PlayerPrefs.GetInt("level") == 2)
         {
@@ -52,11 +48,5 @@ public class objController : MonoBehaviour
 
             obj.transform.position = new Vector2(objX, objY);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

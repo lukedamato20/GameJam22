@@ -11,21 +11,12 @@ public class movement : MonoBehaviour
     private bool collidedEnemy = false;
     private bool collidedPill1 = false;
     private bool collidedPill2 = false;
-    private bool collidedObj = false;
+
     private float timer = 0.0f;
 
     void Awake()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
-    }
-
-    void Start()
-    {
-        //mySprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, 128.0f, 128.0f), new Vector2(0.5f, 0.5f), 100.0f);
-
-        //sr.color = new Color(0.9f, 0.9f, 0.5f, 1.0f);
-        //sr.sprite = mySprite;
-        //transform.position = new Vector3(0.0f, -2.0f, 0.0f);
     }
 
     void FixedUpdate()
@@ -54,7 +45,6 @@ public class movement : MonoBehaviour
             {
                 float maxSpeed = 1.09f;
 
-                //rb2D.velocity = new Vector2((rb2D.velocity.x) , (rb2D.velocity.y) );
                 rb2D.velocity = rb2D.velocity * maxSpeed;
             }
             else
@@ -83,22 +73,25 @@ public class movement : MonoBehaviour
     {
         if(col.gameObject.tag == "Enemy")
         {
-            Debug.Log("OnCollisionEnter2D");
+            Debug.Log("Collided with enemy...");
 
             collidedEnemy = true;
         }
         else if(col.gameObject.tag == "pill1")
         {
+            Debug.Log("Collided with pill 1...");
+
             collidedPill1 = true;
         }
         else if(col.gameObject.tag == "pill2")
         {
+            Debug.Log("Collided with pill 2...");
+
             collidedPill2 = true;
         }
         else if (col.gameObject.tag == "obj")
         {
-            collidedObj = true;
+            Debug.Log("Collided with objective...");
         }
-
     }
 }

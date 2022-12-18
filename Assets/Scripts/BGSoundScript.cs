@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class BGSoundScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     private static BGSoundScript instance = null;
     public static BGSoundScript Instance
     {
@@ -29,10 +23,5 @@ public class BGSoundScript : MonoBehaviour
         }
 
         DontDestroyOnLoad(this.gameObject);
-    }
-
-    void update()
-    {
-
     }
 }
